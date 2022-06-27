@@ -32,7 +32,8 @@ export default {
     },
 
     login({ commit, dispatch }, userData) {
-      axios.post('http://127.0.0.1:8000/api/v1/accounts/login/', userData)
+      // axios.post('http://127.0.0.1:8000/api/v1/accounts/login/', userData)
+      axios.post('3.34.252.133/api/v1/accounts/login/', userData)
         .then(response => {
           commit('SET_TOKEN', response.data.key)
           localStorage.setItem('token', response.data.key)
@@ -45,7 +46,8 @@ export default {
         })
     },
     signup({ commit, dispatch }, userData) {
-      axios.post('http://127.0.0.1:8000/api/v1/accounts/signup/', userData)
+      // axios.post('http://127.0.0.1:8000/api/v1/accounts/signup/', userData)
+      axios.post('3.34.252.133/api/v1/accounts/signup/', userData)
       .then(response => {
         commit('SET_TOKEN', response.data.key)
         localStorage.setItem('token', response.data.key)
@@ -75,7 +77,8 @@ export default {
   // },
 
   logout({commit, dispatch}) {
-    axios.post('http://127.0.0.1:8000/api/v1/accounts/logout/')
+    // axios.post('http://127.0.0.1:8000/api/v1/accounts/logout/')
+    axios.post('3.34.252.133/api/v1/accounts/logout/')
     .then(() => {
       commit('SET_TOKEN', '')
       localStorage.setItem('token', '')
